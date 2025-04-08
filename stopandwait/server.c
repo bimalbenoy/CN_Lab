@@ -74,7 +74,7 @@ int main()
             int drop = rand() % 2;
             if (drop == 0)
             {
-                printf("Simulating ACK loss for frame %d. Sending NAK.\n", frame_no);
+                printf("Simulating ACK loss for frame %d\n", frame_no);
                 strcpy(ack, "NAK");
                 send(client, ack, strlen(ack), 0);
                 continue; // Ask client to resend
@@ -89,7 +89,7 @@ int main()
         }
         else
         {
-            printf("Duplicate/out-of-order frame: %s. Sending NAK.\n", buffer);
+            printf("Duplicate/out-of-order frame: %s.\n", buffer);
             strcpy(ack, "NAK");
             send(client, ack, strlen(ack), 0);
         }

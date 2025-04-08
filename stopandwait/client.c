@@ -51,7 +51,7 @@ int main()
 
             if (strncmp(ack, "NAK", 3) == 0)
             {
-                printf("Received NAK for frame %d. Resending...\n", current_frame);
+                printf("Lost Ack of frame %d. Resending...\n", current_frame);
                 sleep(1);
                 continue;
             }
